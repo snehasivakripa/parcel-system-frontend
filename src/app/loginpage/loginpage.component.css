@@ -1,0 +1,51 @@
+body{
+    float:center;
+    width:100%;
+    padding:100px 0;}
+    
+    button {
+    
+        padding: 15px 32px;
+        background-color:brown;
+        color:white;
+      border-radius: 4px;
+     
+    }
+    
+    button:hover  {
+        background-color:blue;
+        color:white;
+      border-radius: 4px;
+     
+    }
+    
+    .button:hover {   
+      opacity: 1;
+      
+    }
+    
+    .jumbotron{
+                margin: auto;
+                width: 60%;
+                border: 3px solid black;
+                padding: 10px;
+                background-color:cream;
+                }
+    
+   
+    
+  .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    } 
+ 
+  h1{
+    text-align: center;
+  }
+
+ .row{
+  margin: 20px;
+ }
+    

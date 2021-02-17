@@ -1,0 +1,29 @@
+<div class="container">
+    <table class="table table-bordered table-striped" border="4">
+        <thead>
+            <tr>
+                <td>Parcel ID</td>
+                <td>Parcel Item</td>
+                <td>Parcel Address</td>
+                <td>Parcel Phone Number</td>
+                <td>Parcel Status</td>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let heroes of obj; let i = index " class="lists">
+                <td>{{heroes.parcelId}}</td>
+                <td>{{heroes.parcelItem}}</td>
+                <td>{{heroes.parcelAddress}}</td>
+                <td>{{heroes.parcelNumber}}</td>
+                <td>
+                    <button type="button" class="btn btn-primary"
+                        [style.background-color]="enabled[i] ? 'black' : 'grey'"
+                        (click)="enabled[i]=!enabled[i];saveStatus(heroes.parcelId,enabled[i])">
+                        <i class="glyphicon glyphicon-ok"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

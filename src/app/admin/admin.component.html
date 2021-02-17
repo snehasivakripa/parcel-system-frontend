@@ -1,0 +1,94 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <a href="/editAgent"><img src="assets\images\add.png" class="center"></a>
+        </div>
+        <div class="col-sm-6">
+            <a role="button" (click)="func()"><img src="assets\images\editparcel.png" class="parcel" height="200px"></a>
+        </div>
+    </div>
+
+    <div class="container" *ngIf="var1">
+        <div class="row">
+            <table class="table table-bordered table-striped" border="4">
+                <thead>
+                    <tr>
+                        <td>Parcel ID</td>
+                        <td>Parcel Item</td>
+                        <td>Parcel Address</td>
+                        <td>Parcel Phone Number</td>
+                        <td>Agent Name</td>
+                        <td>Agent Phone Number</td>
+                        <td>Parcel Status</td>
+                        <td>OPTION</td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let heroes of obj" class="lists">
+                        <td>{{heroes.parcelId}}</td>
+                        <td>{{heroes.parcelItem}}</td>
+                        <td>{{heroes.parcelAddress}}</td>
+                        <td>{{heroes.parcelNumber}}</td>
+
+                        <td>{{heroes.agentName}}</td>
+                        <td>{{heroes.agentNumber}}</td>
+                        <td>{{heroes.parcelStatus}}</td>
+                        <td>
+                            <button (click)="delete(heroes.parcelId)">
+                                <i class="glyphicon glyphicon-trash"></i>
+                            </button>
+                            <button (click)="edit(heroes.parcelId)">
+                                <i class="glyphicon glyphicon-edit"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+    <div class="container" *ngIf="var2">
+        <div class="row">
+            <table class="table table-bordered table-striped" border="4">
+                <thead>
+                    <tr>
+                        <td>Parcel Item</td>
+                        <td>Parcel Address</td>
+                        <td>Parcel Phone Number</td>
+                        <td>Agent Name</td>
+                        <td>Agent Phone Number</td>
+                        <td>Agent Id</td>
+                        <td>Parcel Status</td>
+                        <td>OPTION</td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><input type="text" class="parcelItem" [(ngModel)]="parcelItem" name="parcelItem"></td>
+                        <td><input type="text" class="parcelAddress" [(ngModel)]="parcelAddress" name="parcelAddress">
+                        </td>
+                        <td><input type="text" class="parcelNumber" [(ngModel)]="parcelNumber" name="parcelNumber"></td>
+                        <td><input type="text" class="agentName" [(ngModel)]="agentName" name="agentName"></td>
+                        <td><input type="text" class="agentNumber" [(ngModel)]="agentNumber" name="agentNumber"></td>
+                        <td><input type="text" class="agentId" [(ngModel)]="agentId" name="agentId"></td>
+                        <td><input type="text" class="status" [(ngModel)]="status" name="status"></td>
+
+                        <td>
+                            <button type="button" class="btn btn-primary" (click)="submit()">Submit</button>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <div>
+                <button type="button" class="btn btn-primary" (click)="back()">Back</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,4 @@
+<app-header></app-header>
+<app-admin *ngIf="role==='admin'"></app-admin>
+<app-user *ngIf="role==='user'" [id]=uid></app-user>
+<app-footer></app-footer>

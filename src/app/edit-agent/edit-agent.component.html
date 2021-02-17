@@ -1,0 +1,63 @@
+<app-header></app-header>
+
+<body>
+    <div>
+        <img src="assets\images\add.png" class="center">
+        <button class="button" (click)="myFunction()">Add Agent</button>
+    </div>
+    <div class="container" *ngIf="var1">
+        <table class="table table-bordered table-striped" border="4">
+            <thead>
+                <tr>
+                    <td>Agent Id</td>
+                    <td>Agent Name</td>
+                    <td>Agent Phone Number</td>
+                    <td>Password</td>
+                    <td>OPTION</td>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let heroes of obj" class="lists">
+                    <td>{{heroes.agentId}}</td>
+                    <td>{{heroes.agentName}}</td>
+                    <td>{{heroes.agentNumber}}</td>
+                    <td>{{heroes.agentPassword}}</td>
+                    <button type="button" class="btn btn-primary" (click)="deleteAgent(heroes.agentId)">DELETE</button>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container" *ngIf="var2">
+        <form (ngSubmit)="submit()" #myform="ngForm">
+            <table class="table table-bordered table-striped" border="4">
+                <thead>
+                    <tr>
+                        <td>Agent Name</td>
+                        <td>Agent Phone Number</td>
+                        <td>Password</td>
+                        <td>Role</td>
+                        <td>OPTION</td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><input type="text" class="agentName" [(ngModel)]="agentName" name="agentName"></td>
+                        <td><input type="text" class="agentNumber" [(ngModel)]="agentNumber" name="agentNumber"></td>
+                        <td><input type="text" class="password" [(ngModel)]="password" name="password"></td>
+                        <td><input type="text" class="role" [(ngModel)]="role" name="role"></td>
+                        <button type="button" class="btn btn-primary" (click)="submit()">Submit</button>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        <div>
+            <button type="button" class="btn btn-primary" (click)="back()">Back</button>
+        </div>
+
+    </div>
+</body>
+
+<app-footer></app-footer>
